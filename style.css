@@ -136,7 +136,7 @@ textarea {
 
 .filters {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr 150px 150px;
   gap: 10px;
   margin-bottom: 12px;
 }
@@ -185,6 +185,53 @@ textarea {
   margin-top: 10px;
 }
 
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.card-head h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.status-badge {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-badge[data-status="待复核"] {
+  background: #fdf0d7;
+  color: var(--amber);
+}
+
+.status-badge[data-status="已确认"] {
+  background: #dff0e9;
+  color: var(--accent);
+}
+
+.status-badge[data-status="需补拍"] {
+  background: #fbe3e0;
+  color: #b4452f;
+}
+
+.photo-hint {
+  margin: 8px 0 0;
+  color: var(--amber);
+  font-size: 12px;
+}
+
+.editor button.ghost {
+  background: #e8f0eb;
+  color: var(--ink);
+}
+
 .card-actions label {
   display: flex;
   align-items: center;
@@ -194,6 +241,12 @@ textarea {
 
 .card-actions input {
   width: auto;
+}
+
+.card-actions select {
+  width: auto;
+  padding: 6px 8px;
+  font-size: 13px;
 }
 
 .card-actions button {
