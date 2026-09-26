@@ -20,6 +20,11 @@
       <form id="sampleForm" class="editor">
         <h2>样本录入</h2>
         <label>显微照片<input id="photoInput" type="file" accept="image/*"></label>
+        <div id="photoPreview" class="photo-preview" hidden>
+          <img id="photoPreviewImg" alt="">
+          <p id="photoPreviewHint" class="photo-preview-hint"></p>
+          <button id="photoRevertBtn" type="button" class="minor-btn" hidden>沿用原照片</button>
+        </div>
         <label>样本编号<input name="code" required placeholder="BX-17-03"></label>
         <label>采样地点<input name="location" placeholder="剖面东侧第二层"></label>
         <div class="pair">
@@ -35,7 +40,10 @@
         <label>主要矿物<input name="minerals" placeholder="石英、斜长石、黑云母"></label>
         <label>颗粒结构<input name="texture" placeholder="半自形粒状、碎裂结构"></label>
         <label>老师批注<textarea name="comment" rows="4" placeholder="记录鉴定依据或疑点"></textarea></label>
-        <button type="submit">保存样本</button>
+        <div class="form-actions">
+          <button id="saveBtn" type="submit">保存样本</button>
+          <button id="cancelBtn" type="button" class="secondary-btn" hidden>取消修改</button>
+        </div>
       </form>
 
       <section class="board">
@@ -46,6 +54,12 @@
             <option>单偏光</option>
             <option>正交偏光</option>
             <option>反射光</option>
+          </select>
+          <select id="statusFilter">
+            <option value="">全部状态</option>
+            <option value="pending">待复核</option>
+            <option value="confirmed">已确认</option>
+            <option value="rephoto">需补拍</option>
           </select>
         </div>
         <div id="sampleGrid" class="sample-grid"></div>

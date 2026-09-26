@@ -124,9 +124,54 @@ textarea {
   gap: 10px;
 }
 
-.editor button {
-  width: 100%;
+.form-actions {
+  display: flex;
+  gap: 10px;
   margin-top: 14px;
+}
+
+.form-actions button {
+  flex: 1;
+}
+
+.secondary-btn {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+}
+
+.minor-btn {
+  min-height: 30px;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  font-size: 12px;
+  padding: 0 10px;
+}
+
+.photo-preview {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.photo-preview img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #dfe9e4;
+}
+
+.photo-preview-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.photo-preview .minor-btn {
+  justify-self: start;
 }
 
 .board {
@@ -136,7 +181,7 @@ textarea {
 
 .filters {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr 140px 130px;
   gap: 10px;
   margin-bottom: 12px;
 }
@@ -161,13 +206,104 @@ textarea {
   background: #dfe9e4;
 }
 
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(
+    45deg,
+    #e4ece7,
+    #e4ece7 10px,
+    #d8e3dd 10px,
+    #d8e3dd 20px
+  );
+}
+
 .sample-body {
   padding: 12px;
 }
 
 .sample-body h3 {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 17px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.status-badge {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.status-pending {
+  background: var(--amber);
+}
+
+.status-confirmed {
+  background: var(--accent);
+}
+
+.status-rephoto {
+  background: #b3483a;
+}
+
+.revision-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.revision-log {
+  margin: 4px 0 8px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.revision-log summary {
+  cursor: pointer;
+}
+
+.revision-log ol {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+}
+
+.revision-log li {
+  display: grid;
+  gap: 2px;
+}
+
+.revision-comment {
+  color: var(--ink);
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
+.status-line select {
+  width: auto;
+  min-width: 110px;
+  padding: 6px 8px;
 }
 
 .sample-body p {
@@ -200,6 +336,18 @@ textarea {
   min-height: 32px;
   background: #e8f0eb;
   color: var(--ink);
+}
+
+.card-actions .danger-btn {
+  background: #f6e4e0;
+  color: #8e3026;
+}
+
+.compare-slot {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 .compare-pane {
